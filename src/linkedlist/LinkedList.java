@@ -17,18 +17,15 @@ public class LinkedList {
 	}
 	
 	public void insert(int data)
-	{		
-		Node n=this.node;
-		if(n==null)
+	{	
+		Node n=node;
+		Node newNode=new Node(data);
+		node=newNode;
+		if(n!=null)
 		{
-			n=new Node(data);
-			return;
+			node.next=n;
 		}
-		while(n.next!=null)
-		{
-			n=n.next;
-		}
-		node=new Node(data);
+		
 	}
 	
 	public void traverseList()
