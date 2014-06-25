@@ -9,29 +9,62 @@ package linkedlist;
  */
 public class LinkedList {
 
-	public Node node;
+	public Node first,last;
 	
 	public LinkedList()
 	{
-		node=new Node();
+		//first=new Node();
+		//last=new Node();
+
 	}
 	
-	public void insert(int data)
+	public void insertFirst(int data)
 	{	
-		Node n=node;
+		Node f=first;
 		Node newNode=new Node(data);
-		node=newNode;
-		if(n!=null)
+		first=newNode;
+		/*if(f!=null)
 		{
-			node.next=n;
+			first.next=f;
+		}else
+		{
+			last=newNode;
+		}*/
+		
+		if (f == null)
+			last = newNode;
+		else
+		{
+			f.prev = newNode;
+			first.next=f;
 		}
 		
 	}
 	
+	public void insertLast(int data)
+	{
+		Node l=last;
+		Node newNode=new Node(data);
+		last=newNode;
+		if(l==null)
+		{
+			first=newNode;
+		}
+		else
+		{
+			l.next=newNode;
+			newNode.prev=l;
+			
+		}
+		
+		
+		//node=n;
+	}
+	
 	public void traverseList()
 	{
-		Node n=this.node;
-		while(n.next!=null)
+		Node n=first;
+		while(n!=null)
 		{
 			System.out.println(n.data);
 			n=n.next;
