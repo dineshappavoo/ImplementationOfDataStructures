@@ -16,11 +16,16 @@ public class LinkedListTest {
 	
 		
 		LinkedList lList=new LinkedList();
-		lList.insert(4);
-		lList.insert(10);
-		lList.insert(15);
-		lList.insert(54);
-		
+		lList.insertFirst(4);
+		lList.insertFirst(10);
+		lList.insertFirst(15);
+		lList.insertFirst(54);
+	
+		lList.insertLast(234);
+		lList.insertLast(3543);
+		lList.insertLast(64);
+
+
 		lList.traverseList();
 		
 	}
